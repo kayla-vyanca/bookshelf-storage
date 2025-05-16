@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>Selamat Datang di <br><span>Bookshelf</span> Apps</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="top">
+                <div class="form-container">
+                    <h2 class="title">Tambah Buku Baru</h2>
+                    <form id="bookForm" onsubmit="event.preventDefault();addBook()" id="formDataBuku">
+                        <div class="form">
+                            <input type="text" id="title" placeholder="" required>
+                            <label for="title">Judul</label>
+                        </div>
+                        <div class="row">
+                            <div class="form">
+                                <input type="text" id="author" placeholder="" required>
+                                <label for="author">Penulis</label>
+                            </div>
+                            
+                            <div class="form">
+                                <input type="number" id="year" placeholder="" required>
+                                <label for="year">Tahun</label>
+                            </div>
+                        </div>
+                        
+                
+                        <div class="form-check">
+                            <input type="checkbox" name="isRead" id="isRead" />
+                            <label for="isRead">Selesai dibaca</label>
+                        </div>
+                        <button type="submit" class="submit-btn" onclick="addBook()">Simpan</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="middle">
+                <div class="search-container">
+                    <h2 class="title">Cari Buku</h2>
+                    <form id="formSearch" onsubmit="event.preventDefault(); searchBooks();">
+                        <div class="form">
+                            <input type="text" name="search" id="search" placeholder="">
+                            <label for="search">Cari Buku</label>
+                        </div>
+                        <div class="form-search-bottom">
+                            <button type="reset" class="reset-btn" onclick="resetSearch()"><i class='bx bx-reset'></i></button>
+                            <button type="submit" class="search-btn"><i class='bx bx-search-alt-2'></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="bottom">
+                <div class="left-container" id="unfinishedShelf">
+                    <span class="shelf-title">Belum Selesai Dibaca</span>
+                    <div id="unfinishedBookshelf"></div>
+                </div>
+                <div class="right-container" id="finishedShelf">
+                    <span class="shelf-title">Sudah selesai Dibaca</span>
+                    <div id="finishedBookshelf"></div>
+                </div>
+            </div>
+        </div>    
+    </main>
+
+    <footer>
+        Kayla Vyanca Atalaya &#169;2023 Dicoding
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
